@@ -7,8 +7,8 @@ class LQR
 private:
     double K[12];
     double k = 150;
-    double linear_vel = 0;
-    double turn_vel = 0;
+    double linear_vel = 0; // Distance of forward
+    double turn_vel = 0;   // diriction of turn
     double pitch = 0;
 
 public:

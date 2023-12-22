@@ -18,7 +18,7 @@ float zero[LEG_LENGTH] = {0.0f, 0.0f, 0.0f};
 int legIndex;
 float nowZero = 0;
 LQR lqr;
-float avr = (LEG_MAX + LEG_MIN) / 2;
+float avr = (LEG_MAX + LEG_MIN) / 2; // Average leg length
 float diff = 0;
 Store store(eep);
 
@@ -82,7 +82,7 @@ void leg_update()
   if (legL.isChenge())
   {
     angle = legL.get();
-    store.put(1, angle);
+    store.put(1, angle); // id is 1
     Serial.print("angle_l: ");
     Serial.println(angle);
     chooseZeroK();
@@ -90,7 +90,7 @@ void leg_update()
   if (legR.isChenge())
   {
     angle = legR.get();
-    store.put(5, angle);
+    store.put(5, angle); // id is 5
     Serial.print("angl_R: ");
     Serial.println(angle);
     chooseZeroK();
@@ -239,8 +239,8 @@ void button_update()
   }
 }
 
-double linear_vel = 0.2;
-double turn_vel = 4;
+double linear_vel = 0.2; // Distance of forward,the default is 0.2
+double turn_vel = 4;     // diriction of turn,the default is 4
 
 void cmd_handle()
 {
